@@ -31,10 +31,10 @@ Linux使用的同步机制可以说随着内核版本的不断发展而完善。
 |**函数**|**说明**|
 |------|---|
 |ATOMIC\_INIT(i)|在声明一个atomic\_t变量时，将它初始化为i;|
-|atomic\_read(v)|返回\*v。|
-|atomic\_set(v,i) |把\*v置成i|
-|atomic\_add(i,v)|给\*v增加i|
-|atomic\_sub(i,v)|从\*v中减去i|
+|atomic\_read(v)|返回\*v|
+|atomic\_set(v, i) |把\*v置成i|
+|atomic\_add(i, v)|给\*v增加i|
+|atomic\_sub(i, v)|从\*v中减去i|
 |atomic\_sub\_and\_test(i, v) |   从\*v中减去i，如果结果为0，则返回1；否则，返回0|
 |atomic\_inc(v)|   把1加到 \*v|
 |atomic\_dec(v) |   从\*v减1|
@@ -56,7 +56,7 @@ Linux使用的同步机制可以说随着内核版本的不断发展而完善。
 ```c
     atomic_set(&v,4) /* v = 4 ( 原子地)*/
 
-    atomic_set(2,&v) /* v = v + 2 = 6 (原子地) */
+    atomic_add(2,&v) /* v = v + 2 = 6 (原子地) */
 
     atomic_inc(&v) /* v = v + 1 =7（原子地)*/
 ```
